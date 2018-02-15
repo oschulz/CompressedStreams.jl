@@ -1,1 +1,1 @@
-# CompressedStreams
+# CompressedStreams.jl
