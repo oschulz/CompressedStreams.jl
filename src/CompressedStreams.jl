@@ -4,6 +4,8 @@ __precompile__(true)
 
 module CompressedStreams
 
-# package code goes here
+
+include("compressed_file.jl")
+
 
 end # module
