@@ -5,7 +5,7 @@ end
 export CompressedFile
 
 
-Base.open(file::CompressedFile, mode::AbstractString = "r") = begin
+function Base.open(file::CompressedFile, mode::AbstractString = "r")
     filename = file.filename
 
     if mode == "r"
@@ -24,6 +24,6 @@ Base.open(file::CompressedFile, mode::AbstractString = "r") = begin
             open(`cat $filename`, "r")
         end
     else
-        @assert false
-    end
+        throw(ArgumentError("Mode $mode currently not supported"))
+    end::Base.Process
 end
